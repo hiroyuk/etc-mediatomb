@@ -163,7 +163,12 @@ function addVideo(obj)
 	    var year = m.shift();
 	    // title : 'foo bar'
 	    var title = m.join(' ');
-	    chain.push(year);
+	    if (year.length == 6) {
+		chain.push(year.substring(0,4));
+		chain.push(year.substring(4,6));
+	    } else {
+		chain.push(year);
+	    }
 
 	    if (title.length > 0) {
 		chain.push(title);
